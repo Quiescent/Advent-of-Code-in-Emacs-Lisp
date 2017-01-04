@@ -1997,7 +1997,8 @@
 
 ;;; Code:
 
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 
 (defvar *q-read-in-collumns* nil)
 
@@ -2033,9 +2034,9 @@
 
 (defun q-count-valid (triangles)
   "Count the number of valid triangles in TRIANGLES."
-  (length (remove-if (lambda (triangle)
-                       (not (q-valid-triangle-p triangle)))
-                     triangles)))
+  (length (cl-remove-if (lambda (triangle)
+                          (not (q-valid-triangle-p triangle)))
+                        triangles)))
 
 
 

@@ -26,6 +26,11 @@
 
 ;;; Code:
 
+(require 'seq)
+(eval-and-compile
+  (add-to-list 'load-path "dash.el"))
+(require 'dash)
+
 (defun q-parse-line (line)
   "Parse LINE into an instruction."
   (pcase (split-string line " " t)

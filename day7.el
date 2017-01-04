@@ -2006,7 +2006,8 @@
 
 ;;; Code:
 
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 
 (defvar *q-palindrome-length* nil)
 

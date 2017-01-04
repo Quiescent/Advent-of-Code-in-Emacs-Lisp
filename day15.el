@@ -29,7 +29,8 @@
 
 ;;; Code:
 
-(require 'cl)
+(eval-and-compile
+  (require 'cl))
 
 (defun q-parse-line (line)
   "Parse LINE into a disc."

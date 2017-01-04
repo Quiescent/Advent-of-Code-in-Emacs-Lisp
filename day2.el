@@ -11,6 +11,8 @@
 
 ;;; Code:
 
+(require 'seq)
+
 (defvar *q-position*    nil)
 (defvar *q-block-count* nil)
 (defvar *q-x-dim*       nil)

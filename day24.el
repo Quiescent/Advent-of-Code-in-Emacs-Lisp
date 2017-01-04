@@ -47,8 +47,17 @@
 ;; #.#..6#.........#...#.#.......#.#.......#.........#...#.....#.#...#...#.#.#.....#.....#.#.........................#.......#...#.#.........#.#...#...........#...#.....#.....#...#...#
 ;; #####################################################################################################################################################################################
 
-
 ;;; Code:
+
+(require 'seq)
+(eval-and-compile
+  (add-to-list 'load-path "predictive"))
+(require 'queue)
+(eval-and-compile
+  (add-to-list 'load-path "dash.el"))
+(require 'dash)
+(eval-when-compile
+  (require 'cl))
 
 (defvar *q-return-to-0* nil)
 
@@ -87,7 +96,6 @@ separate list and a treated as reachable in the graph."
          (squares   (seq-reduce #'+ (mapcar #'length lines) 0))
          (graph     (make-vector squares nil))
          (x-dim     (length (car lines)))
-         x
          start
          objectives)
     (dolist (line lines graph)
@@ -198,7 +206,7 @@ If START is supplied, then start the list from START."
   (interactive "sInput: ")
   (let ((*q-return-to-0* (y-or-n-p "Return to zero? ")))
     (pcase (q-parse input)
-      (`(,start ,objectives . ,graph)
+      (`(,_ ,objectives . ,graph)
        (message "%s" (q-tsp (q-create-tsp-graph graph objectives)))))))
 
 ;; Without returning: 428

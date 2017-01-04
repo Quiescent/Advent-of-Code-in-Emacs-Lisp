@@ -7,7 +7,8 @@
 ;;; Code:
 
 (require 'seq)
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 
 (defvar *q-hashes-to-find*      nil)
 (defvar *q-use-hash-stretching* nil)
@@ -78,7 +79,7 @@
         (setq to-find
               (mapcar (lambda (x)
                         (pcase x
-                          (`(,flag . (,pos . ,search))
+                          (`(,_ . (,pos . ,search))
                            (if (string-match search curr-hash)
                                (cons t (cons pos search))
                              x))))

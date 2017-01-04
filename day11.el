@@ -33,9 +33,11 @@
 ;;; Code:
 
 (require 'seq)
-(add-to-list 'load-path "~/.emacs.d/predictive")
+(eval-and-compile
+  (add-to-list 'load-path "predictive"))
 (require 'queue)
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 
 (defconst q-line-start-sentinal "contains")
 (defconst q-len-sentinal        (length q-line-start-sentinal))

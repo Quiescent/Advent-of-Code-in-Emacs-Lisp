@@ -997,7 +997,8 @@
 ;;; Code:
 
 (require 'seq)
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 (require 'map)
 
 (defconst q-north-pole-objects-room "northpole object storage")
@@ -1029,10 +1030,9 @@ checksum."
 
 A room is valid if the checksum is a list of the characters in
 the room name sorted by frequency of their occurance."
-  (let ((valid t))
-    (pcase room
-      (`(,freq-data ,_name ,_code ,checksum)
-       (string= checksum (q-compute-checksum freq-data))))))
+  (pcase room
+    (`(,freq-data ,_name ,_code ,checksum)
+     (string= checksum (q-compute-checksum freq-data)))))
 
 (defun q-char-table-pairs (char-table)
   "Produce a list of key-value pairs from CHAR-TABLE.

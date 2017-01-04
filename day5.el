@@ -7,7 +7,8 @@
 
 ;;; Code:
 
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 (require 'seq)
 
 (defvar *q-current-num*        nil)

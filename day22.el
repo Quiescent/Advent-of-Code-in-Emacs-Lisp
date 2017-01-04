@@ -1058,7 +1058,7 @@
   (require 'cl))
 (require 'seq)
 (eval-and-compile
-  (add-to-list 'load-path "~/.emacs.d/predictive"))
+  (add-to-list 'load-path "predictive"))
 (require 'queue)
 
 (defun q-parse-line (line)

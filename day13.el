@@ -6,6 +6,11 @@
 
 ;;; Code:
 
+(eval-and-compile
+  (add-to-list 'load-path "predictive"))
+(require 'queue)
+(require 'subr-x)
+
 (defconst q-destination '(31 . 39))
 
 (defvar *q-favourite-number*      nil)

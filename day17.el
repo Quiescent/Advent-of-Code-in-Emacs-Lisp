@@ -6,8 +6,10 @@
 
 ;;; Code:
 
-(require 'cl)
-(add-to-list 'load-path "~/.emacs.d/predictive")
+(eval-when-compile
+  (require 'cl))
+(eval-and-compile
+  (add-to-list 'load-path "predictive"))
 (require 'queue)
 
 (defconst q-x-dim 4)

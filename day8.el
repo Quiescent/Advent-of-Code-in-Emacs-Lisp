@@ -5,7 +5,8 @@
 ;;; Code:
 
 (require 'seq)
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 
 (defvar *q-screen* nil)
 (defvar *q-x-dim*  nil)

@@ -7,6 +7,8 @@
 
 ;;; Code:
 
+(require 'seq)
+
 (defvar *q-total-rows* nil)
 
 (defun q-parse-row (row)
