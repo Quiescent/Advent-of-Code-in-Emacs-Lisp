@@ -10,7 +10,7 @@
 (eval-when-compile
   (require 'cl))
 
-(defconst q-disk-length        272)
+(defconst q-disk-length      272)
 (defconst q-long-disk-length 35651584)
 
 (defun q-parse (input)
