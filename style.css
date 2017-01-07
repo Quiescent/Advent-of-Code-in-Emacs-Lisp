@@ -1,0 +1,29 @@
+body {
+    font-family: helvetica;
+    width: 72%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0px;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 10px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+pre {
+    background-color: #222;
+    color: white;
+    overflow-x: scroll !important;
+    overflow-y: scroll !important;
+    max-height: 400px;
+}
+
+html {
+    margin-top: 0px;
+    background: linear-gradient(to right, #222, #fff);
+}
+
+pre.src:before {
+    color: black;
+    top: 2px !important;
+    right: 2px !important;
+}
