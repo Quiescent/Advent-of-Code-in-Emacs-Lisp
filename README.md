@@ -10,7 +10,7 @@ Quick Start
 -----------
 
 ```
-git clone https://github.com/Quiescent/Advent-of-Code-in-Emacs-Lisp.git && cd Advent-of-Code-in-Emacs-Lisp && emacs advent-of-code.org
+git clone https://github.com/Quiescent/Advent-of-Code-in-Emacs-Lisp.git && cd Advent-of-Code-in-Emacs-Lisp && make all && emacs advent-of-code.org
 ```
 
 Read/execute/browse source :)
