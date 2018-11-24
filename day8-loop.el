@@ -1,7 +1,7 @@
-;;; day7-loop --- My solution to day7-loop -*- lexical-binding: t; -*-
+;;; day8-loop --- My solution to day8-loop -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; My solution to advent of code: day7-loop
+;; My solution to advent of code: day8-loop
 
 ;;; Code:
 
@@ -76,13 +76,13 @@
      finally return (cl-loop for line across display
                        concat (concat (apply #'string (cl-loop for char across line collect char)) "\n"))))
 
-(defun day7-loop-part-1 (input-file)
+(defun day8-loop-part-1 (input-file)
   "Run my solution to part one of the problem on the input in INPUT-FILE."
   (cl-count ?# (render input-file)))
 
 ;; # PART 2:
 
-(defun day7-loop-part-2 (input-file)
+(defun day8-loop-part-2 (input-file)
   "Run my solution to part two of the problem on the input in INPUT-FILE."
   (render input-file))
 
@@ -91,16 +91,16 @@
 (progn
   (message "\n********** OUTPUT **********")
   (let ((input-1 (with-temp-buffer
-                   (find-file-literally "day7-loop-part-1")
+                   (find-file-literally "day8-loop-part-1")
                    (buffer-substring (point-min)
                                      (point-max))))
         (input-2 (with-temp-buffer
-                   (find-file-literally "day7-loop-part-1")
+                   (find-file-literally "day8-loop-part-1")
                    (buffer-substring (point-min)
                                      (point-max)))))
-    (message "Part 1:%s" (day7-loop-part-1 input-1))
-    (message "Part 2:\n%s\n" (day7-loop-part-2 input-2))))
+    (message "Part 1:%s" (day8-loop-part-1 input-1))
+    (message "Part 2:\n%s\n" (day8-loop-part-2 input-2))))
 
-(provide 'day7-loop)
-;;; day7-loop ends here
+(provide 'day8-loop)
+;;; day8-loop ends here
 
